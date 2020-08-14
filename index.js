@@ -252,18 +252,16 @@ getArtistByIndex(artists, 0);
 
 /* Task 4: Create a function called get20s() that takes data as an argument and returns an array with names of artists who were born in and died in 20th century (1900-2000) example born in 1901 and died in 1959 - included / born in 1889 and died in 1925 not included - should return ["Salvador Dali", "Frida Kahlo"]*/
 
-function get20s(artists){
-
-  let born = [];
-  for (let i = 0; i < artists.length; i++)
-    if ((artists[i].years.slice(0,5) <= 2000) && (artists[i].years.slice(0,5) >= 1900))
-      {
-      born.push(artists[i]);
-      }
-   return twentiesBorn;
+function get20s(arr) {
+  let newArr = [];
+  for (let i in arr) {
+    if (parseInt(arr[i].years) >= 1900) {
+      arr.push(arr[i].name);
+    }
+  }
+  return newArr;
 }
-
-console.log(get20s(artists)
+console.log(get20s(artists));
 
 /* Task 5: Create a function called `removeArtist` that takes two arguments:
  *     (1) artists array
@@ -362,4 +360,4 @@ function randomize(/* Code here */) {
 }
 
 /* STRETCH 3: Use advanced array methods (.map, .reduce, .filer) to refactor your MVP code (create an array of all artists born in the 1900s with .filter, for example) */
-// 
+//
